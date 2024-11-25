@@ -11,6 +11,8 @@ app.use(helmet.ieNoOpen());
 const time = 90*24*60*60;
 app.use(helmet.hsts({maxAge: time, force: true}));
 app.use(helmet.dnsPrefetchControl());
+const nocache = require('nocache');
+app.use(nocache());
 app.use(helmet.noCache());
 app.use(helmet.contentSecurityPolicy({
   directives: {
