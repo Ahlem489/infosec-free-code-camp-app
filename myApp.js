@@ -11,7 +11,7 @@ const time = 90*24*60*60;
 app.use(helmet.hsts({maxAge: time, force: true}));
 app.use(helmet.dnsPrefetchControl());
 app.use(helmet.noCache());
-ap.use(helmet.contentSecurityPolicy({
+app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],
     scriptSrc: ["'self'", 'trusted-cdn.com']
