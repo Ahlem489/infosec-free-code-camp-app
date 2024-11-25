@@ -10,7 +10,7 @@ app.use(helmet.ieNoOpen());
 const time = 90*24*60*60;
 app.use(helmet.hsts({maxAge: time, force: true}));
 app.use(helmet.dnsPrefetchControl());
-
+app.use(helmet.noCache());
 
 module.exports = app;
 const api = require('./server.js');
