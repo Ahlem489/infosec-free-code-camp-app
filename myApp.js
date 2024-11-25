@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const app = express();
+const bcrypt = require('bcrypt');
 app.use(helmet())
 app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({ action: 'deny' }));
@@ -17,7 +18,6 @@ app.use(helmet.contentSecurityPolicy({
     scriptSrc: ["'self'", 'trusted-cdn.com']
   }
 }));
-const bcrypt = require('bcrypt');
 
 module.exports = app;
 const api = require('./server.js');
