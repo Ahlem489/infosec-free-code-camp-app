@@ -17,6 +17,7 @@ app.use(helmet.contentSecurityPolicy({
     scriptSrc: ["'self'", 'trusted-cdn.com']
   }
 }));
+const bcrypt = require('bcrypt');
 
 module.exports = app;
 const api = require('./server.js');
